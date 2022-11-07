@@ -1,9 +1,10 @@
 import React from 'react';
+import ServiceItems from './ServiceItems';
 
 const Services = () => {
     return (
         <div>
-            <h1>This is services page</h1>
+            <ServiceItems></ServiceItems>
         </div>
     );
 };
