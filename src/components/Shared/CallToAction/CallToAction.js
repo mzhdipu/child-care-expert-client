@@ -1,0 +1,34 @@
+import React from 'react';
+
+const CallToAction = () => {
+    return (
+        <section class="py-10 bg-white sm:py-16 lg:py-20">
+            <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
+                <div class="text-center lg:flex lg:items-center lg:justify-between lg:text-left">
+                    <h2 class="text-4xl font-bold text-black lg:max-w-md">Get full access to Celebration kit</h2>
+
+                    <form action="#" method="POST" class="px-10 mt-8 lg:mt-0 lg:px-0">
+                        <div class="sm:flex sm:justify-center lg:justify-end">
+                            <div>
+                                <label for="email" class="sr-only"></label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    placeholder="Enter email to get started"
+                                    class="block w-full px-4 py-4 text-base text-black placeholder-gray-500 transition-all duration-200 border-gray-200 rounded-md sm:rounded-r-none caret-blue-600 focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                                    required
+                                />
+                            </div>
+                            <button type="submit" class="inline-flex items-center justify-center flex-shrink-0 w-full px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md sm:mt-0 sm:rounded-l-none sm:w-auto hover:bg-blue-700 focus:bg-blue-700">
+                                Get Started Free
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default CallToAction;

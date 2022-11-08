@@ -1,10 +1,10 @@
 import React from 'react';
-import ServiceItems from './ServiceItems';
+import AllServices from '../../components/Shared/AllServices/AllServices';
 
 const Services = () => {
     return (
         <div>
-            <ServiceItems></ServiceItems>
+            <AllServices></AllServices>
         </div>
     );
 };
