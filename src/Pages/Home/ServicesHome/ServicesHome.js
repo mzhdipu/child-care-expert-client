@@ -1,7 +1,7 @@
 import React from 'react';
-import ServiceItems from './ServiceItems';
+import ServicesHomeItems from './ServicesHomeItems';
 
-const AllServices = () => {
+const ServicesHome = () => {
     return (
         <section className="py-10 bg-gray-50 sm:py-16 lg:py-24">
             <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -11,10 +11,10 @@ const AllServices = () => {
                     </div>
                 </div>
 
-                <ServiceItems></ServiceItems>
+                <ServicesHomeItems></ServicesHomeItems>
             </div>
         </section>
     );
 };
 
-export default AllServices;
+export default ServicesHome;
