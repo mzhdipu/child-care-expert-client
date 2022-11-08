@@ -1,16 +1,15 @@
 import React from 'react';
-import AllServices from '../../components/Shared/AllServices/AllServices';
 import CallToAction from '../../components/Shared/CallToAction/CallToAction';
 import About from './About';
 import Banner from './Banner';
-import ServicesHome from './ServicesHome/ServicesHome';
+import Services from './Services/Services';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <About></About>
-            <ServicesHome></ServicesHome>
+            <Services></Services>
             <CallToAction></CallToAction>
         </div>
     );
