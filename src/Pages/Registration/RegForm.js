@@ -2,7 +2,7 @@ import React from 'react';
 import { FaFacebookF, FaGithub } from 'react-icons/fa';
 
 
-const LoginForm = () => {
+const RegForm = () => {
     return (
         <>
         <form action="#" method="POST" className="mt-8 text-left">
@@ -105,4 +105,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default RegForm;
