@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
-// import { AuthContext } from '../../../Root/Context/AuthProvider';
+import { AuthContext } from '../../../Root/Context/AuthProvider';
 import MenuItems, { menuItems } from './MenuItems';
 
 const Header = () => {
-    // const {user} = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
     
     return (
         <header className="pb-6 bg-white lg:pb-0 shadow-md">
@@ -35,8 +35,15 @@ const Header = () => {
                         <MenuItems></MenuItems>
                     </ul>
 
+                    <Link to="/profile">
+                        {user?.photoURL ?
+                             <Link className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> My Account </Link>
+                            : 
+                            <Link to="/login" className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> Login Now </Link>
+                        }
+                    </Link>
                     
-                    <Link to="/login" className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> My Account </Link>
+                    {/* <Link to="/login" className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> My Account </Link> */}
                 </nav>
 
                 
@@ -47,9 +54,9 @@ const Header = () => {
                         </ul>
                     </div>
 
-                    <div className="px-6 mt-6">
+                    {/* <div className="px-6 mt-6">
                         <Link to="/login" className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md tems-center hover:bg-blue-700 focus:bg-blue-700" role="button"> Login </Link>
-                    </div>
+                    </div> */}
                 </nav>
             </div>
         </header>

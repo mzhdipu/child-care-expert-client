@@ -1,5 +1,6 @@
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { FaFacebookF, FaGithub } from 'react-icons/fa';
+import { FaFacebookF, FaGithub, FaGoogle } from 'react-icons/fa';
 import swal from 'sweetalert';
 // import swal from 'sweetalert';
 import { AuthContext } from '../../Root/Context/AuthProvider';
@@ -7,7 +8,33 @@ import { AuthContext } from '../../Root/Context/AuthProvider';
 
 const LoginForm = () => {
     const {login} = useContext(AuthContext);
+    const {googleSignIn, gitHubSignIn} = useContext(AuthContext)
     const [error, setError] = useState();
+
+    const gitProvider = new GithubAuthProvider();
+    const provider = new GoogleAuthProvider();
+
+    const hangleGoogleLogin =()=>{
+        googleSignIn(provider)
+            .then(result =>{
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+      }
+      
+      const hangleGithubLogin =()=>{
+        gitHubSignIn(gitProvider)
+            .then(result =>{
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error=>{
+                console.log(error)
+            })
+      }
 
     const handleLogin = event =>{
         event.preventDefault();
@@ -94,20 +121,20 @@ const LoginForm = () => {
                     type="button"
                     className="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
                 >
-                    <div className="absolute inset-y-0 left-0 p-4 text-blue-600">
-                        <FaFacebookF/>
+                    <div onClick={hangleGoogleLogin} className="absolute inset-y-0 left-0 p-4 text-blue-600">
+                        <FaGoogle/>
                     </div>
-                    Sign up with Fabook
+                    Sign up with Google
                 </button>
 
                 <button
                     type="button"
                     className="relative inline-flex items-center justify-center w-full px-4 py-4 text-base font-semibold text-gray-700 transition-all duration-200 bg-white border-2 border-gray-200 rounded-md hover:bg-gray-100 focus:bg-gray-100 hover:text-black focus:text-black focus:outline-none"
                 >
-                    <div className="absolute inset-y-0 left-0 p-4">
+                    <div onClick={hangleGithubLogin} className="absolute inset-y-0 left-0 p-4">
                         <FaGithub/>
                     </div>
-                    Sign up with Facebook
+                    Sign up with GitHub
                 </button>
             </div>
         </>
