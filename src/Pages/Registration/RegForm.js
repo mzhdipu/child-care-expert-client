@@ -1,12 +1,42 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FaFacebookF, FaGithub } from 'react-icons/fa';
+import { AuthContext } from '../../Root/Context/AuthProvider';
+import swal from 'sweetalert';
 
 
 const RegForm = () => {
-    
+    const {createUser} = useContext(AuthContext);
+    const [error, setError] = useState()
+
+    const handleSignUp = event =>{
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            form.reset();
+            setError('');
+            form.reset();
+            // handleUpdateUserProfile(name, photoURL);
+            // handleEmailVerification();
+            swal('Account Created Successfully')
+        })
+        .catch(e => {
+            console.error(e);
+            setError(e.message);
+            swal(error)
+        });
+      }
+
+
     return (
         <>
-        <form action="#" method="POST" className="mt-8 text-left">
+        <form onSubmit={handleSignUp} action="#" method="POST" className="mt-8 text-left">
             <div className="space-y-5">
                 <div>
                     <label for="" className="text-base font-medium text-gray-900"> Fast & Last name </label>
@@ -19,7 +49,7 @@ const RegForm = () => {
 
                         <input
                             type="text"
-                            name=""
+                            name="name"
                             id=""
                             placeholder="Enter your full name"
                             className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -38,7 +68,7 @@ const RegForm = () => {
 
                         <input
                             type="email"
-                            name=""
+                            name="email"
                             id=""
                             placeholder="Enter email to get started"
                             className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
@@ -62,7 +92,7 @@ const RegForm = () => {
 
                         <input
                             type="password"
-                            name=""
+                            name="password"
                             id=""
                             placeholder="Enter your password"
                             className="block w-full py-4 pl-10 pr-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
