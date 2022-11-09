@@ -1,12 +1,13 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
+
 const ServicesDetails = () => {
-    const service = useLoaderData();
-    console.log(service)
+    const serviceDetails = useLoaderData()
+    console.log(serviceDetails);
     return (
         <div>
-            <p>{service.title}</p>
+            <p>{serviceDetails.title}</p>
         </div>
     );
 };

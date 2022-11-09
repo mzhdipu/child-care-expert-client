@@ -15,7 +15,7 @@ export const menuItems = <>
     </li>
 
     <li className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
-        <Link to='/add/services'>Add Services</Link>
+        <Link to='/add-services'>Add Services</Link>
     </li>
 
     {/* <li className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
