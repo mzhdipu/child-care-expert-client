@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.png';
-import { menuItems } from './MenuItems';
+// import { AuthContext } from '../../../Root/Context/AuthProvider';
+import MenuItems, { menuItems } from './MenuItems';
 
 const Header = () => {
-
+    // const {user} = useContext(AuthContext);
+    
     return (
         <header className="pb-6 bg-white lg:pb-0 shadow-md">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -30,7 +32,7 @@ const Header = () => {
                     </button>
 
                     <ul className="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-                        {menuItems}
+                        <MenuItems></MenuItems>
                     </ul>
 
                     
@@ -41,7 +43,7 @@ const Header = () => {
                 <nav className="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden">
                     <div className="flow-root">
                         <ul className="flex flex-col px-6 -my-2 space-y-1">
-                            {menuItems}
+                            <MenuItems></MenuItems>
                         </ul>
                     </div>
 
