@@ -1,4 +1,5 @@
 import React from 'react';
+import swal from 'sweetalert';
 
 const AddServices = () => {
     const handleAddService = (event) =>{
@@ -28,7 +29,11 @@ const AddServices = () => {
           .then(data => {
             console.log(data)
         
-            // apply condition with toast
+            if(data.acknowledged){
+                swal("Added Service Sucessfully");
+                event.target.reset();
+            }
+            
           })
         
           .catch(error => {

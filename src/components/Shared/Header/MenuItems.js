@@ -18,9 +18,9 @@ export const menuItems = <>
         <Link to='/add-services'>Add Services</Link>
     </li>
 
-    {/* <li className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
-        <Link to='/login'>Login</Link>
-    </li> */}
+    <li className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
+        <Link to='/my-reviews'>My Reviews</Link>
+    </li>
 
     <li tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
