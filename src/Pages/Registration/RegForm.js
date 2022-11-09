@@ -3,6 +3,7 @@ import { FaFacebookF, FaGithub } from 'react-icons/fa';
 
 
 const RegForm = () => {
+    
     return (
         <>
         <form action="#" method="POST" className="mt-8 text-left">
