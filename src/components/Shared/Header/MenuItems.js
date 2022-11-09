@@ -38,7 +38,7 @@ const MenuItems = () => {
 
                     <li>
                         {user?.photoURL ?
-                            <img src={user?.photoURL}/>
+                            <img src={user?.photoURL} style={{ height: '40px' }} className= "rounded-full"/>
                             // <Image
                             //     style={{ height: '30px' }}
                             //     roundedCircle
@@ -50,6 +50,8 @@ const MenuItems = () => {
                             </Link>
                         }
                     </li>
+
+                    <li onClick={handleLogOut} className='font-semibold'><Link>Logout</Link></li>
                 </>
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
