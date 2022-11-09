@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Reviews from './Reviews';
 
 const MyReviews = () => {
+    const [reviews, setReviews] = useState([])
+
+    useEffect(()=>{
+        fetch(`http://localhost:5000/my-reviews`)
+            .then(res => res.json())
+            .then(data => setReviews(data))
+    },[])
+
     return (
         <section className="py-10 bg-gray-100 sm:py-16 lg:py-24">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
@@ -26,7 +34,9 @@ const MyReviews = () => {
                             </thead>
 
                             <tbody>
-                                <Reviews></Reviews>
+                                {
+                                    reviews.map(review => <Reviews key={review._id} review = {review}></Reviews>)
+                                }
                             </tbody>
                             
                         </table>
