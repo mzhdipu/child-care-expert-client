@@ -6,7 +6,9 @@ import MenuItems, { menuItems } from './MenuItems';
 
 const Header = () => {
     const {user} = useContext(AuthContext);
-    
+
+   
+
     return (
         <header className="pb-6 bg-white lg:pb-0 shadow-md">
             <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -34,16 +36,6 @@ const Header = () => {
                     <ul className="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
                         <MenuItems></MenuItems>
                     </ul>
-
-                    <Link to="/profile">
-                        {user?.photoURL ?
-                             <Link className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> My Account </Link>
-                            : 
-                            <Link to="/login" className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> Login Now </Link>
-                        }
-                    </Link>
-                    
-                    {/* <Link to="/login" className="items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700" role="button"> My Account </Link> */}
                 </nav>
 
                 
@@ -54,9 +46,7 @@ const Header = () => {
                         </ul>
                     </div>
 
-                    {/* <div className="px-6 mt-6">
-                        <Link to="/login" className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md tems-center hover:bg-blue-700 focus:bg-blue-700" role="button"> Login </Link>
-                    </div> */}
+                   
                 </nav>
             </div>
         </header>
@@ -65,3 +55,7 @@ const Header = () => {
 };
 
 export default Header;
+
+
+
+

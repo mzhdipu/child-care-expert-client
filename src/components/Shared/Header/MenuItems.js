@@ -1,10 +1,16 @@
 import React, { useContext } from 'react';
-import { FaUser } from 'react-icons/fa';
+import { FaUser, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Root/Context/AuthProvider';
 
 const MenuItems = () => {
-    const {user} = useContext(AuthContext);
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
     return (
         <>
             <li className="text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600">
@@ -30,7 +36,7 @@ const MenuItems = () => {
                         <Link to='/my-reviews'>My Reviews</Link>
                     </li>
 
-                    <li to="/profile">
+                    <li>
                         {user?.photoURL ?
                             <img src={user?.photoURL}/>
                             // <Image
@@ -38,14 +44,12 @@ const MenuItems = () => {
                             //     roundedCircle
                             //     src={user?.photoURL}>
                             // </Image>
-                            : <FaUser></FaUser>
+                            : 
+                            <Link onClick={handleLogOut}>
+                                <FaUserAlt/>
+                            </Link>
                         }
                     </li>
-                    {/* <li tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                        <img src="https://placeimg.com/80/80/people" />
-                        </div>
-                    </li> */}
                 </>
                 :
                 <li className='font-semibold'><Link to='/login'>Login</Link></li>
