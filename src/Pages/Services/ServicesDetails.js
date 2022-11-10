@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import ServiceReview from '../MyReviews/ServiceReview';
+import ServicesReviews from '../MyReviews/ServicesReviews';
 
 
 const ServicesDetails = () => {
@@ -24,6 +26,9 @@ const ServicesDetails = () => {
                         <p class="mt-4 text-lg text-gray-700">{description}</p>
                     </div>
                 </div>
+
+                <ServiceReview></ServiceReview>
+                <ServicesReviews></ServicesReviews>
             </div>
         </section>
 

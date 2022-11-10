@@ -4,6 +4,7 @@ import Blog from "../../Pages/Blog/Blog";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
+import ServiceReview from "../../Pages/MyReviews/ServiceReview";
 import Registration from "../../Pages/Registration/Registration";
 import Services from "../../Pages/Services/Services";
 import ServicesDetails from "../../Pages/Services/ServicesDetails";
@@ -59,7 +60,7 @@ export const router = createBrowserRouter([
 
             {
                 path : "/my-reviews",
-                element : <MyReviews></MyReviews>
+                element : <MyReviews></MyReviews>,
             },
                                          
             {
