@@ -4,12 +4,29 @@ import { useLoaderData } from 'react-router-dom';
 
 const ServicesDetails = () => {
     const serviceDetails = useLoaderData()
+    const {_id, title, img, description} = serviceDetails
     console.log(serviceDetails)
     return (
-        <div>
-            <p>{serviceDetails.title}</p>
-            <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro molestias harum officiis dolores similique repellat, ipsum aspernatur enim, voluptates quas est asperiores, sint eligendi repellendus explicabo odit iste reprehenderit blanditiis.</h1>
-        </div>
+        <section class="py-10 bg-white sm:py-16 lg:py-24">
+            <div class="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
+                <div class="mx-auto text-left md:max-w-lg lg:max-w-2xl md:text-center">
+                    <h2 class="text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight">
+                       {title}
+                    </h2>
+                </div>
+
+                <div class=" mt-8 md:mt-20 gap-y-6 md:grid-cols-2 gap-x-10">
+                    <div>
+                        <img class="w-full mx-auto sm:max-w-xs" src={img} alt="" />
+                    </div>
+
+                    <div>
+                        <p class="mt-4 text-lg text-gray-700">{description}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     );
 };
 
