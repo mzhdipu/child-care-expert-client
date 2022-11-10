@@ -1,10 +1,13 @@
-import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Root/Context/AuthProvider';
+import PrivateRoute from '../../Root/Router/PrivateRoute';
 import ServiceReview from '../MyReviews/ServiceReview';
 import ServicesReviews from '../MyReviews/ServicesReviews';
 
 
 const ServicesDetails = () => {
+    const {user} = useContext(AuthContext)
     const serviceDetails = useLoaderData()
     const {_id, title, img, description} = serviceDetails
     console.log(serviceDetails)
@@ -28,7 +31,17 @@ const ServicesDetails = () => {
                 </div>
 
                 <ServiceReview></ServiceReview>
-                <ServicesReviews></ServicesReviews>
+
+                {
+                    user?.uid ? <ServicesReviews></ServicesReviews> :
+                    <Link to="/login">
+                        <button className="btn btn-primary">Please Login now</button>
+                    </Link>
+                    
+                }
+                
+               
+                
             </div>
         </section>
 

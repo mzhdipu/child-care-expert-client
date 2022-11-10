@@ -5,11 +5,13 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import ServiceReview from "../../Pages/MyReviews/ServiceReview";
+import ServicesReviews from "../../Pages/MyReviews/ServicesReviews";
 import Registration from "../../Pages/Registration/Registration";
 import Services from "../../Pages/Services/Services";
 import ServicesDetails from "../../Pages/Services/ServicesDetails";
 import ServicesHome from "../../Pages/Services/ServicesHome";
 import Main from "../Layout/Main";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
