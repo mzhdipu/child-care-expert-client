@@ -46,7 +46,7 @@ const Reviews = ({review}) => {
                     {user?.displayName}
                 </td>
                 <td>
-                    <Link >
+                    <Link to={`/update/${review._id}`}> 
                         <button className="btn btn-ghost btn-xs">Update</button>
                     </Link>
                 </td>
