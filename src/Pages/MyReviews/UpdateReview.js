@@ -1,13 +1,51 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Root/Context/AuthProvider';
 
 const UpdateReview = () => {
     const {user} = useContext(AuthContext)
     const {update} = useLoaderData
+    const [updateReview, setUpdateReview] = useState({});
+
+
+    const handleAddReview = (event) =>{
+        event.preventDefault();
+        const form = event.target;
+        const review = form.review.value;
+  
+        const updateReview = {
+          review
+        }
+  
+        fetch(`http://localhost:5000/update/${review._id}`, {
+                  method: 'PUT',
+                  headers: {
+                      'content-type': 'application/json'
+                  },
+                  body: JSON.stringify(updateReview)
+              })
+              .then(res => res.json())
+              .then(data => {
+                  if (data.modifiedCount > 0){
+                      alert('user updated')
+                      console.log(data);
+                  }
+  
+                  const newUpdateReviews = [...updateReview, data];
+                  setUpdateReview(newUpdateReviews);
+  
+              })
+        
+          .catch(error => {
+            console.log(error)
+            }) 
+  
+      }
+
+
     return (
         <div>
-           <form className="card flex-shrink-0 w-3/5 m-auto my-8 shadow-2xl bg-base-100">
+           <form onSubmit={handleAddReview} className="card flex-shrink-0 w-3/5 m-auto my-8 shadow-2xl bg-base-100">
               <div className="card-body">
 
                 <div className="form-control">

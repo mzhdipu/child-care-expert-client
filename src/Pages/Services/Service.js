@@ -1,4 +1,5 @@
 import React from 'react';
+import { PhotoProvider } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const Service = ({service}) => {
@@ -6,8 +7,12 @@ const Service = ({service}) => {
         <>
             <div className="overflow-hidden bg-white rounded shadow">
                 <div className="p-5">
+
+                    
                     <div className="relative">
-                        <img className="object-cover w-full h-full" src={service.img} alt="" />
+                        <PhotoProvider>
+                            <img className="object-cover w-full h-full" src={service.img} alt="" />
+                        </PhotoProvider>
                     </div>
                     
                     <p className="mt-5 text-2xl font-semibold">
