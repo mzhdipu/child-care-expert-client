@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Root/Context/AuthProvider';
-import PrivateRoute from '../../Root/Router/PrivateRoute';
-import ServiceReview from '../MyReviews/ServiceReview';
+// import PrivateRoute from '../../Root/Router/PrivateRoute';
+// import ServiceReview from '../MyReviews/ServiceReview';
 import ServicesReviews from '../MyReviews/ServicesReviews';
 
 
@@ -30,7 +30,7 @@ const ServicesDetails = () => {
                     </div>
                 </div>
 
-                <ServiceReview></ServiceReview>
+               
 
                 {
                     user?.uid ? <ServicesReviews></ServicesReviews> :

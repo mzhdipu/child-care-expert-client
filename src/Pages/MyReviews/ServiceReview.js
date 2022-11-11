@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import AuthProvider, { AuthContext } from '../../Root/Context/AuthProvider';
 
-const ServiceReview = () => {
+const ServiceReview = ({addReviews}) => {
     const {user} = useContext(AuthContext);
-    console.log(user)
+    console.log(addReviews.review)
 
     return (
         <section class="bg-white">
@@ -19,7 +19,7 @@ const ServiceReview = () => {
                 <div class="md:flex md:items-left">
                     <div class="relative flex-shrink-0 w-48 h-48">
                         <div class="absolute w-20 bg-gray-300 rounded-full -bottom-2 -right-1"></div>
-                        <img class="relative object-cover w-20 rounded-full" src="https://cdn.rareblocks.xyz/collection/celebration/images/testimonials/2/avatar.jpg" alt="" />
+                        <img class="relative object-cover w-20 rounded-full" src={user.photoURL} alt="" />
                     </div>
 
                     <div class="mt-10 md:mt-0">
