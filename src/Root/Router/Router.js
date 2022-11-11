@@ -23,28 +23,28 @@ export const router = createBrowserRouter([
                 path : "/",
                 element : <Home></Home>,
                 loader: () => {
-                    return fetch(`http://localhost:5000/services`)
+                    return fetch(`https://server-snowy-one.vercel.app/services`)
                  },
             },
             {
                 path : "/home",
                 element : <Home></Home>,
                 loader: () => {
-                    return fetch(`http://localhost:5000/services`)
+                    return fetch(`https://server-snowy-one.vercel.app/services`)
                  }
             },
             {
                 path : "/services",
                 element : <Services></Services>,
                 loader: () => {
-                   return fetch(`http://localhost:5000/services`)
+                   return fetch(`https://server-snowy-one.vercel.app/services`)
                 }
             },
             {
                 path : "/services",
                 element : <ServicesHome></ServicesHome>,
                 loader: () => {
-                   return fetch(`http://localhost:5000/services`)
+                   return fetch(`https://server-snowy-one.vercel.app/services`)
                 }
             },
           
@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
                 path : "/services/:id",
                 element : <ServicesDetails></ServicesDetails>,
                 loader: ({params})=>{
-                   return fetch(`http://localhost:5000/services/${params.id}`) 
+                   return fetch(`https://server-snowy-one.vercel.app/services/${params.id}`) 
                 }
             },
                                          
@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
                 path : "/update/:id",
                 element : <UpdateReview></UpdateReview> ,
                 loader: ({params})=>{
-                    return fetch(`http://localhost:5000/update/${params.id}`) 
+                    return fetch(`https://server-snowy-one.vercel.app/update/${params.id}`) 
                  }
             },                                         
             {

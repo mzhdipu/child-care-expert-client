@@ -17,7 +17,7 @@ const handleAddReview = (event) =>{
   }
 
 
-  fetch(`http://localhost:5000/my-reviews`,{
+  fetch(`https://server-snowy-one.vercel.app/my-reviews`,{
       method: 'POST',
       headers: {
         'Accept': 'application/json',

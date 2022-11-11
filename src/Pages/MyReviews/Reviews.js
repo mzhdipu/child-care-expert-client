@@ -8,7 +8,7 @@ const Reviews = ({review}) => {
     const {user} = useContext(AuthContext)
     const location = useLocation
    const handleDelete = (review) =>{
-    fetch(`http://localhost:5000/my-reviews/${review._id}`, {
+    fetch(`https://server-snowy-one.vercel.app/my-reviews/${review._id}`, {
         method: 'DELETE'
     })
         .then(res => res.json())

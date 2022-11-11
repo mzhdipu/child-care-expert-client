@@ -17,7 +17,7 @@ const AddServices = () => {
 
         console.log(addService)
       
-        fetch(`http://localhost:5000/services`,{
+        fetch(`https://server-snowy-one.vercel.app/services`,{
             method: 'POST',
             headers: {
               'Accept': 'application/json',

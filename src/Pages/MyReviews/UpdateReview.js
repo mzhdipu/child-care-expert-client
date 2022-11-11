@@ -17,7 +17,7 @@ const UpdateReview = () => {
           review
         }
   
-        fetch(`http://localhost:5000/update/${review._id}`, {
+        fetch(`https://server-snowy-one.vercel.app/update/${review._id}`, {
                   method: 'PUT',
                   headers: {
                       'content-type': 'application/json'
